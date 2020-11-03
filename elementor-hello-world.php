@@ -6,7 +6,7 @@
  * Version:     1.2.1
  * Author:      Author Name
  * Author URI:  https://elementor.com/
- * Text Domain: elementor-hello-world
+ * Text Domain: martailer-slider
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -73,7 +73,7 @@ final class Elementor_Hello_World {
 	 * @access public
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'elementor-hello-world' );
+		load_plugin_textdomain( 'martailer-slider' );
 	}
 
 	/**
@@ -127,9 +127,9 @@ final class Elementor_Hello_World {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'elementor-hello-world' ),
-			'<strong>' . esc_html__( 'Elementor Hello World', 'elementor-hello-world' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'elementor-hello-world' ) . '</strong>'
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'martailer-slider' ),
+			'<strong>' . esc_html__( 'Elementor Martailer slider', 'martailer-slider' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'martailer-slider' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -150,9 +150,9 @@ final class Elementor_Hello_World {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-hello-world' ),
-			'<strong>' . esc_html__( 'Elementor Hello World', 'elementor-hello-world' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'elementor-hello-world' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'martailer-slider' ),
+			'<strong>' . esc_html__( 'Elementor Martailer Slider', 'martailer-slider' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'martailer-slider' ) . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -174,9 +174,9 @@ final class Elementor_Hello_World {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-hello-world' ),
-			'<strong>' . esc_html__( 'Elementor Hello World', 'elementor-hello-world' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'elementor-hello-world' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'martailer-slider' ),
+			'<strong>' . esc_html__( 'Elementor Martailer Slider', 'martailer-slider' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'martailer-slider' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
 

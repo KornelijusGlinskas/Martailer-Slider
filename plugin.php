@@ -48,7 +48,21 @@ class Plugin {
 	 * @access public
 	 */
 	public function widget_scripts() {
-		wp_register_script( 'elementor-hello-world', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_register_script( 'slick-js', plugins_url( '/assets/js/slick/slick.min.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_register_script( 'martailer-slider', plugins_url( '/assets/js/martailer-slider.js', __FILE__ ), [ 'jquery' ], false, true );
+	}
+
+	/**
+	 * widget_scripts
+	 *
+	 * Load required plugin core files.
+	 *
+	 * @since 1.2.0
+	 * @access public
+	 */
+	public function widget_styles() {
+        wp_register_style( 'slick-js', plugins_url( '/assets/css/slick.css', __FILE__ ) );
+        wp_register_style( 'martailer-slider', plugins_url( '/assets/css/martailer-style.css', __FILE__ ) );
 	}
 
 	/**
@@ -63,7 +77,7 @@ class Plugin {
 		add_filter( 'script_loader_tag', [ $this, 'editor_scripts_as_a_module' ], 10, 2 );
 
 		wp_enqueue_script(
-			'elementor-hello-world-editor',
+			'martailer-slider-editor',
 			plugins_url( '/assets/js/editor/editor.js', __FILE__ ),
 			[
 				'elementor-editor',
@@ -84,7 +98,7 @@ class Plugin {
 	 * @return string
 	 */
 	public function editor_scripts_as_a_module( $tag, $handle ) {
-		if ( 'elementor-hello-world-editor' === $handle ) {
+		if ( 'martailer-slider-editor' === $handle ) {
 			$tag = str_replace( '<script', '<script type="module"', $tag );
 		}
 
@@ -100,8 +114,7 @@ class Plugin {
 	 * @access private
 	 */
 	private function include_widgets_files() {
-		require_once( __DIR__ . '/widgets/hello-world.php' );
-		require_once( __DIR__ . '/widgets/inline-editing.php' );
+		require_once(__DIR__ . '/widgets/martailer-slider.php');
 	}
 
 	/**
@@ -118,7 +131,6 @@ class Plugin {
 
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Hello_World() );
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Inline_Editing() );
 	}
 
 	/**
@@ -152,8 +164,11 @@ class Plugin {
 
 		// Register editor scripts
 		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'editor_scripts' ] );
-		
-		$this->add_page_settings_controls();
+
+		// Register widget styles
+        add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles' ] );
+
+        $this->add_page_settings_controls();
 	}
 }
 
