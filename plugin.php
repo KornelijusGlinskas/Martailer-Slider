@@ -1,7 +1,7 @@
 <?php
-namespace ElementorHelloWorld;
+namespace MartailerSliderWidget;
 
-use ElementorHelloWorld\PageSettings\Page_Settings;
+use MartailerSliderWidget\PageSettings\Page_Settings;
 
 /**
  * Class Plugin
@@ -75,16 +75,6 @@ class Plugin {
 	 */
 	public function editor_scripts() {
 		add_filter( 'script_loader_tag', [ $this, 'editor_scripts_as_a_module' ], 10, 2 );
-
-		wp_enqueue_script(
-			'martailer-slider-editor',
-			plugins_url( '/assets/js/editor/editor.js', __FILE__ ),
-			[
-				'elementor-editor',
-			],
-			'1.2.1',
-			true
-		);
 	}
 
 	/**
@@ -130,7 +120,7 @@ class Plugin {
 		$this->include_widgets_files();
 
 		// Register Widgets
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Hello_World() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Martailer_Slider() );
 	}
 
 	/**

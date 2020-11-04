@@ -1,5 +1,5 @@
 <?php
-namespace ElementorHelloWorld\PageSettings;
+namespace MartailerSliderWidget\PageSettings;
 
 use Elementor\Controls_Manager;
 use Elementor\Core\DocumentTypes\PageBase;

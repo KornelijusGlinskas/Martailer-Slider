@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: Elementor Hello World
- * Description: Elementor sample plugin.
- * Plugin URI:  https://elementor.com/
- * Version:     1.2.1
- * Author:      Author Name
- * Author URI:  https://elementor.com/
+ * Plugin Name: Elementor Martailer Slider
+ * Description: Simple Slider Plugin
+ * Plugin URI:  https://kornelijusglinskas.lt
+ * Version:     1.0.0
+ * Author:      Kornelijus Glinskas
+ * Author URI:  https://kornelijusglinskas.lt
  * Text Domain: martailer-slider
  */
 
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Any custom code should go inside Plugin Class in the plugin.php file.
  * @since 1.2.0
  */
-final class Elementor_Hello_World {
+final class Martailer_Slider_Widget {
 
 	/**
 	 * Plugin Version
@@ -184,5 +184,5 @@ final class Elementor_Hello_World {
 	}
 }
 
-// Instantiate Elementor_Hello_World.
-new Elementor_Hello_World();
+// Instantiate Martailer_Slider_Widget.
+new Martailer_Slider_Widget();
